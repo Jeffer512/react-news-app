@@ -17,6 +17,7 @@ function Details() {
       </div>
     );
   }
+  const paragraphs = article.body?.split('\n').filter(para => para.trim() !== "") ?? [];
 
   return (
     <div className="article-details">
@@ -33,7 +34,9 @@ function Details() {
       </div>
       
       <div className="content">
-        <p>{article.body}</p>
+        {paragraphs.map((text, index) => (
+          <p key={index}>{text}</p>
+        ))}
       </div>
       
       <a href={article.url} target="_blank" rel="noopener noreferrer" className="source-link">
