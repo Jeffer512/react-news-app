@@ -9,7 +9,7 @@ function ArticleCard({ article }) {
       className="article-container" 
       onClick={() => navigate(`/article/${encodeURIComponent(article.uri)}`, { state: { article } })}
     >
-      <img src={article.image || placeholder} alt={article.title} />
+      <img src={article.image || placeholder} alt={article.title} loading="lazy"/>
       <h3>{article.title}</h3>
       <p className="article-body">{article.body?.slice(0, 300)}</p>
     </div>
