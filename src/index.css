@@ -19,16 +19,28 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* When the 'dark' class is added to the <body> tag via React */
+body.dark {
+  --bg-app: #121212;
+  --bg-card: #1e1e1e;
+  --bg-nav: #070202;
+  --text-main: #f4f4f4;
+  --text-muted: #b0b0b0;
+  --accent: #3793ff;
+  --border-color: #444444;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
 h1 {
   text-align: center;
 }
 
 /* Navigation / Search Bar */
-nav {
+.nav-content {
   background: var(--bg-nav);
   padding: 1rem 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px var(--shadow-color);
   position: sticky;
@@ -48,7 +60,7 @@ input[type="text"] {
   color: var(--text-main);
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  width: 500px;
+  width: 40vw;
 }
 
 button {

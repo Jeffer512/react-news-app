@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 
 const NewsContext = createContext();
 
@@ -19,6 +19,18 @@ export const NewsProvider = ({ children }) => {
   };
 
   const [filters, setFilters] = useState(initialState);
+  const [isDark, setIsDark] = useState(false);
+
+  const toggleDarkMode = () => setIsDark(!isDark);
+
+  // This is the "Magic" that makes the CSS variables switch
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [isDark]);
 
   /**
    * Update specific filter properties.
@@ -39,7 +51,7 @@ export const NewsProvider = ({ children }) => {
   const resetFilters = () => setFilters(initialState);
 
   return (
-    <NewsContext.Provider value={{ filters, updateFilters, resetFilters }}>
+    <NewsContext.Provider value={{ filters, updateFilters, resetFilters, isDark, toggleDarkMode }}>
       {children}
     </NewsContext.Provider>
   );
