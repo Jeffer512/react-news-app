@@ -33,7 +33,7 @@ export const useNews = () => {
           keyword,
           articlesPage: apiPage,
         });
-        if (isActive && response) {
+        if (isActive && results) {
           setApiData(results);
         }
       } catch (err) {
