@@ -31,13 +31,14 @@ export const getArticles = async (filters) => {
     articlesCount: 100,
     keyword: filters.keyword,
     // Default to dmoz/News category only if no keyword is present
-    categoryUri: filters.categoryUri.length > 0 ? filters.categoryUri : (!filters.keyword ? "dmoz/News" : ""),
+    categoryUri: filters.categoryUri.length > 0 ? filters.categoryUri : "",
     categoryOper: filters.categoryUri.length > 1 ? filters.categoryOper : "",
     articlesSortBy: filters.articlesSortBy,
     articlesSortByAsc: filters.articlesSortByAsc,
     dateStart: filters.dateStart,
     dateEnd: filters.dateEnd, 
     forceMaxDataTimeWindow: 31,
+    lang: "eng",
     apiKey: API_KEY,
   };
 
