@@ -37,9 +37,13 @@ export const useNews = () => {
           setApiData(results);
         }
       } catch (err) {
-        setError("Failed to fetch news. Please try again later.");
+        if (isActive) {
+          setError("Failed to fetch news. Please try again later.");
+        }
       } finally {
-        setLoading(false);
+        if (isActive) {
+          setLoading(false);
+        }
       }
     };
 
