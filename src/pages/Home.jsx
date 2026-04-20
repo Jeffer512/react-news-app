@@ -1,4 +1,5 @@
 import ArticleList from '../components/ArticleList';
+import Filters from '../components/Filters';
 import SearchBar from '../components/SearchBar';
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
     <div className="home">
       <nav>
         <SearchBar />
+        <Filters />
       </nav>
       <main>
         <h1>Top Stories</h1>
