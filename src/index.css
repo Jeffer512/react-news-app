@@ -26,7 +26,7 @@ body.dark {
   --bg-nav: #070202;
   --text-main: #f4f4f4;
   --text-muted: #b0b0b0;
-  --accent: #3793ff;
+  --accent: #000000;
   --border-color: #444444;
   --shadow-color: rgba(0, 0, 0, 0.5);
 }
@@ -68,6 +68,7 @@ button {
   background: var(--accent);
   color: white; 
   border: none;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   cursor: pointer;
   transition: opacity 0.2s;
