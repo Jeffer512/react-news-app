@@ -7,10 +7,11 @@ function SearchBar() {
   const [query, setQuery] = useState("");
   
   // Grab the theme logic and the reset logic from Context
-  const { isDark, toggleDarkMode, resetFilters } = useNewsFilters();
+  const { isDark, toggleDarkMode, updateFilters, resetFilters } = useNewsFilters();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    updateFilters({uiPage: 1})
     if (query.trim()) {
       navigate(`/search/${encodeURIComponent(query)}`);
     }
