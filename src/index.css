@@ -52,6 +52,7 @@ h1 {
 form {
   display: flex;
   gap: 0.5rem;
+  width: 50vw;
 }
 
 input[type="text"] {
@@ -60,7 +61,7 @@ input[type="text"] {
   color: var(--text-main);
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  width: 40vw;
+  width: 100%;
 }
 
 button {
@@ -255,3 +256,46 @@ button:disabled {
   margin-top: 0.5rem;
 }
 
+@media (max-width: 768px) {
+  .nav-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .home-link {
+    order: 1;
+    grid-column: 2;     
+    text-align: center;
+    white-space: nowrap; 
+  }
+
+  .theme-btn {
+    order: 2;
+    grid-column: 3;      
+    justify-self: end;   
+  }
+
+  .search-form {
+    order: 3;
+    grid-column: 1 / span 3; 
+    width: 100%;
+    display: flex;
+  }
+
+  .filters-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 90vw; 
+    max-width: 250px;
+  }
+}
