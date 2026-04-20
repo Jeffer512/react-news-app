@@ -8,7 +8,7 @@ import './index.css';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <NewsProvider>
-      <BrowserRouter>
+      <BrowserRouter basename='react-news-app'>
         <App />
       </BrowserRouter>
     </NewsProvider>
